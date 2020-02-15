@@ -3,6 +3,7 @@ const buttonCheck=document.getElementById('app2')
 const buttonSum=document.getElementById('sum')
 const buttonSum3and5=document.getElementById('sum3and5')
 const buttonSumOrMul=document.getElementById('sumOrMul')
+const buttonTables=document.getElementById('tables')
 
 const view=document.getElementById('app')
 
@@ -11,6 +12,7 @@ buttonCheck.addEventListener("click",checkUser)
 buttonSum.addEventListener("click",sumUntilN)
 buttonSum3and5.addEventListener("click",sumUntilN3and5)
 buttonSumOrMul.addEventListener("click",sumOrMul)
+buttonTables.addEventListener("click",tables)
 
 function sayHello(){
     let message="Hello World"
@@ -75,4 +77,17 @@ function sumUntilN3and5(){
     let res=1
         for(let i=1;i<=num;i++) res*=i
    return res
+}
+
+function tables(){
+    let numbers=[1,2,3,4,5,6,7,8,9,10,11,12]
+    for(let i=0;i<numbers.length;i++){
+        let unordered=document.createElement("ul")    
+    for(let j=1;j<=10;j++){
+        let lista=document.createElement("li")
+        lista.innerHTML=`${numbers[i]} * ${j}= ${numbers[i]*j}`
+        unordered.appendChild(lista) 
+    }
+        view.appendChild(unordered)
+    }
 }
