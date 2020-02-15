@@ -117,7 +117,8 @@ function guessGame(){
 }
 
 function leapYears(){
-    let actualYear=2020
+    let today = new Date();
+    let actualYear=today.getFullYear()
     let leapsYears=[]
     while(leapsYears.length <=20){
         if(actualYear%400 ===0 ){
