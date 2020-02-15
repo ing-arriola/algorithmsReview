@@ -94,7 +94,6 @@ function tables(){
         elementOfTable.innerHTML=`${numbers[i]} * ${j}= ${numbers[i]*j}`
         table.appendChild(elementOfTable) 
     }
-        
         view.appendChild(table)
     }
 }
