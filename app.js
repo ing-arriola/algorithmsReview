@@ -5,6 +5,7 @@ const buttonSum3and5=document.getElementById('sum3and5')
 const buttonSumOrMul=document.getElementById('sumOrMul')
 const buttonTables=document.getElementById('tables')
 const buttonGuess=document.getElementById('guess')
+const buttonLeap=document.getElementById('leap')
 
 const view=document.getElementById('app')
 
@@ -15,6 +16,7 @@ buttonSum3and5.addEventListener("click",sumUntilN3and5)
 buttonSumOrMul.addEventListener("click",sumOrMul)
 buttonTables.addEventListener("click",tables)
 buttonGuess.addEventListener("click",guessGame)
+buttonLeap.addEventListener("click",leapYears)
 
 function sayHello(){
     let message="Hello World"
@@ -113,3 +115,23 @@ function guessGame(){
 
     }
 }
+
+function leapYears(){
+    let actualYear=2020
+    let leapsYears=[]
+    while(leapsYears.length <=20){
+        if(actualYear%400 ===0 ){
+        leapsYears.push(actualYear)
+        }else if(actualYear % 4 === 0 && actualYear % 100 !== 0){
+            leapsYears.push(actualYear)
+        }
+        actualYear+=1
+    }
+    let listOfYears=document.createElement("ul")    
+    for(let j=1;j<leapsYears.length;j++){
+        let elementOfTable=document.createElement("li")
+        elementOfTable.innerHTML=`${[j]}. ${leapsYears[j]}`
+        listOfYears.appendChild(elementOfTable) 
+    }
+        view.appendChild(listOfYears)
+    }
