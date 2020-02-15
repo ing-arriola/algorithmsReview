@@ -85,6 +85,9 @@ function sumUntilN3and5(){
 
 function tables(){
     let numbers=[1,2,3,4,5,6,7,8,9,10,11,12]
+    while (view.firstChild) {
+        view.removeChild(view.firstChild);
+    }
     for(let i=0;i<numbers.length;i++){
         let table=document.createElement("ul")    
     for(let j=1;j<=10;j++){
@@ -92,6 +95,7 @@ function tables(){
         elementOfTable.innerHTML=`${numbers[i]} * ${j}= ${numbers[i]*j}`
         table.appendChild(elementOfTable) 
     }
+        
         view.appendChild(table)
     }
 }
@@ -120,6 +124,9 @@ function leapYears(){
     let today = new Date();
     let actualYear=today.getFullYear()
     let leapsYears=[]
+    while (view.firstChild) {
+        view.removeChild(view.firstChild);
+    }
     while(leapsYears.length <=20){
         if(actualYear%400 ===0 ){
         leapsYears.push(actualYear)
