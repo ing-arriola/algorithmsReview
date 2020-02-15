@@ -4,6 +4,7 @@ const buttonSum=document.getElementById('sum')
 const buttonSum3and5=document.getElementById('sum3and5')
 const buttonSumOrMul=document.getElementById('sumOrMul')
 const buttonTables=document.getElementById('tables')
+const buttonGuess=document.getElementById('guess')
 
 const view=document.getElementById('app')
 
@@ -13,6 +14,7 @@ buttonSum.addEventListener("click",sumUntilN)
 buttonSum3and5.addEventListener("click",sumUntilN3and5)
 buttonSumOrMul.addEventListener("click",sumOrMul)
 buttonTables.addEventListener("click",tables)
+buttonGuess.addEventListener("click",guessGame)
 
 function sayHello(){
     let message="Hello World"
@@ -82,12 +84,32 @@ function sumUntilN3and5(){
 function tables(){
     let numbers=[1,2,3,4,5,6,7,8,9,10,11,12]
     for(let i=0;i<numbers.length;i++){
-        let unordered=document.createElement("ul")    
+        let table=document.createElement("ul")    
     for(let j=1;j<=10;j++){
-        let lista=document.createElement("li")
-        lista.innerHTML=`${numbers[i]} * ${j}= ${numbers[i]*j}`
-        unordered.appendChild(lista) 
+        let elementOfTable=document.createElement("li")
+        elementOfTable.innerHTML=`${numbers[i]} * ${j}= ${numbers[i]*j}`
+        table.appendChild(elementOfTable) 
     }
-        view.appendChild(unordered)
+        view.appendChild(table)
+    }
+}
+
+function guessGame(){
+    let repeat=true
+    let trying
+    let secret=65
+    let attempts=0
+    while(repeat){
+        trying=getNumberFromUser("Guess the secret number")
+        attempts+=1
+        if(trying===secret){
+            alert(`You guessed the number in ${attempts} attempts`)
+            repeat=false
+        }else if(trying>secret){
+            alert("Too High")
+        }else{
+            alert("Too Small")
+        }
+
     }
 }
