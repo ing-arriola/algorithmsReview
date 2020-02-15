@@ -1,23 +1,19 @@
 const buttonLargest=document.getElementById('largest')
 const buttonReverse=document.getElementById('reverseArray')
-
-
+const buttonCheckElement=document.getElementById('checkElement')
 const viewTwo=document.getElementById('app')
 
 buttonLargest.addEventListener("click",largest)
-
 buttonReverse.addEventListener("click",reverseArray)
+buttonCheckElement.addEventListener("click",checkElement)
 
 function largest(){
     let arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
-
     viewTwo.innerHTML=`The largest number in [${arrayNumbers}] is: ${arrayNumbers.reduce(function (prevLargest,currentLarger){
         return (currentLarger>prevLargest) ? currentLarger : prevLargest
     },0)}`
 
 }
-
-
 
 function reverseArray(){
     array=[1,2,3,4,5,6,7,8,9]
@@ -27,5 +23,16 @@ function reverseArray(){
     }
     viewTwo.innerHTML=`Original array:${array} <br><br>Reverse array is:${ret}`
 }
+
+function getNumberFromUser(msg){
+    let number=prompt(msg)
+    return parseInt(number)
+}
+
+function checkElement(){
+    let arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
+    let search=getNumberFromUser("Ingrese numero a buscar")
+    viewTwo.innerHTML=(arrayNumbers.indexOf(search)>-1 ) ? "Valor Existe" : "Valor no existe"
     
+}
     

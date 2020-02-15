@@ -36,7 +36,6 @@ function checkUser(){
 function getNumberFromUser(msg){
     let number=prompt(msg)
     return parseInt(number)
-    
 }
 
 function sumUntilN(){
