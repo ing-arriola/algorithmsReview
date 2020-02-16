@@ -9,6 +9,8 @@ const buttonSquares=document.getElementById('squares')
 const buttonConcatenates=document.getElementById('concatenates')
 const buttonCombinates=document.getElementById('combinates')
 const buttonMergedSorted=document.getElementById('mergedSorted')
+const buttonRotate=document.getElementById('rotate')
+
 const viewTwo=document.getElementById('app')
 
 buttonLargest.addEventListener("click",largest)
@@ -22,6 +24,8 @@ buttonSquares.addEventListener("click",squares)
 buttonConcatenates.addEventListener("click",callConcat)
 buttonCombinates.addEventListener("click",callComb)
 buttonMergedSorted.addEventListener("click",callMerge)
+buttonRotate.addEventListener("click",callRotate)
+
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
 const arrayToSum=[1,2,3,4,5,6,7,8,9,10]
@@ -213,6 +217,12 @@ function mergedSorted(arr1,arr2){
     }else{
         alert("Opcion no valida")
     }
+}
 
+function callRotate(){
 
+}
+
+function rotate(arr){
+    
 }
