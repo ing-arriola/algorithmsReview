@@ -86,6 +86,7 @@ function decide(){
             viewTwo.innerHTML=runningTotalWithWhile()
             break
         case 2:
+            viewTwo.innerHTML=runningTotalWithFor()
             break
         case 3:
             viewTwo.innerHTML=runningTotalWithRecursion(arrayToSum)
@@ -104,8 +105,11 @@ function runningTotalWithWhile(){
 }
 
 function runningTotalWithFor(){
-    
-    
+    let total=0
+    arrayToSum.forEach(element => {
+        total+=element
+    });
+    return total
 }
 
 function runningTotalWithRecursion(array){
