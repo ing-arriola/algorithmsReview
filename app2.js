@@ -1,14 +1,17 @@
 const buttonLargest=document.getElementById('largest')
 const buttonReverse=document.getElementById('reverseArray')
 const buttonCheckElement=document.getElementById('checkElement')
+const buttonOddPositions=document.getElementById('OddPositions') 
 const viewTwo=document.getElementById('app')
 
 buttonLargest.addEventListener("click",largest)
 buttonReverse.addEventListener("click",reverseArray)
 buttonCheckElement.addEventListener("click",checkElement)
+buttonOddPositions.addEventListener("click",OddPositions)
+
+const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
 
 function largest(){
-    let arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
     viewTwo.innerHTML=`The largest number in [${arrayNumbers}] is: ${arrayNumbers.reduce(function (prevLargest,currentLarger){
         return (currentLarger>prevLargest) ? currentLarger : prevLargest
     },0)}`
@@ -30,9 +33,18 @@ function getNumberFromUser(msg){
 }
 
 function checkElement(){
-    let arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
     let search=getNumberFromUser("Ingrese numero a buscar")
-    viewTwo.innerHTML=(arrayNumbers.indexOf(search)>-1 ) ? "Valor Existe" : "Valor no existe"
-    
+    viewTwo.innerHTML=(arrayNumbers.indexOf(search)>-1 ) ? "Valor Existe" : "Valor no existe"  
+}
+
+function OddPositions(){
+    let oddNumbers=[]
+    arrayNumbers.map(function(element,index){
+        if(index%2===0) {
+            oddNumbers.push(element)
+        }
+    })
+    viewTwo.innerHTML=oddNumbers
+
 }
     
