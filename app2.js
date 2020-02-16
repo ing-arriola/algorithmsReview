@@ -8,6 +8,7 @@ const buttonDecideSum=document.getElementById('decide')
 const buttonSquares=document.getElementById('squares')
 const buttonConcatenates=document.getElementById('concatenates')
 const buttonCombinates=document.getElementById('combinates')
+const buttonMergedSorted=document.getElementById('mergedSorted')
 const viewTwo=document.getElementById('app')
 
 buttonLargest.addEventListener("click",largest)
@@ -20,7 +21,7 @@ buttonDecideSum.addEventListener("click",decide)
 buttonSquares.addEventListener("click",squares)
 buttonConcatenates.addEventListener("click",callConcat)
 buttonCombinates.addEventListener("click",callComb)
-
+buttonMergedSorted.addEventListener("click",callMerge)
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
 const arrayToSum=[1,2,3,4,5,6,7,8,9,10]
@@ -148,6 +149,10 @@ function callComb(){
     combinates([1,2,3],["a","b","c","d","e","f"])
 }
 
+function callMerge(){
+    mergedSorted([6,2,5,1,3,4],[9,11,8,10,7,12])
+}
+
 function concatenates(array1,array2){
     let arrayResult=array1.concat(array2)//One line solution
     /*let arrayResult=array1 //For each solution
@@ -178,4 +183,36 @@ function combinates(array1,array2){
     }
     viewTwo.innerHTML=combination
     
+}
+
+//algoritmo de la burbuja
+function sortList(arr){
+    let temp=0
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length-1; j++) {
+            if(arr[j]>arr[j+1]){
+                temp=arr[j]
+                arr[j]=arr[j+1]
+                arr[j+1]=temp
+            }    
+        }
+    }
+    return arr
+}
+
+function mergedSorted(arr1,arr2){
+    let option=getNumberFromUser("¿Como desea ordenar Listas? Ingrese 1 para funciones propias y 2 para funciones creadas")
+    if (option===1){
+        arr1=arr1.sort((a,b)=>{return a-b})
+        arr2=arr2.sort((a,b)=>{return a-b})
+        concatenates(arr1,arr2)
+    }else if(option===2){
+        arr1=sortList(arr1)
+        arr2=sortList(arr2)
+        concatenates(arr1,arr2)
+    }else{
+        alert("Opcion no valida")
+    }
+
+
 }
