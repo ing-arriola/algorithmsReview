@@ -5,6 +5,8 @@ const buttonOddPositions=document.getElementById('OddPositions')
 const buttonRunningTotal=document.getElementById('runningTotal')
 const buttonPalindrome=document.getElementById('palindrome')
 const buttonDecideSum=document.getElementById('decide')
+const buttonSquares=document.getElementById('squares')
+const buttonConcatenates=document.getElementById('concatenates')
 const viewTwo=document.getElementById('app')
 
 buttonLargest.addEventListener("click",largest)
@@ -14,6 +16,8 @@ buttonOddPositions.addEventListener("click",OddPositions)
 buttonRunningTotal.addEventListener("click",runningTotal)
 buttonPalindrome.addEventListener("click",palindrome)
 buttonDecideSum.addEventListener("click",decide)
+buttonSquares.addEventListener("click",squares)
+buttonConcatenates.addEventListener("click",callConcat)
 
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
@@ -119,4 +123,30 @@ function runningTotalWithRecursion(array){
         return array[0]+runningTotalWithRecursion(array.slice(1))
     }
 
+}
+
+//perfect squares, callback is a requirement
+function squares (){
+    let listOfNumbers=[]
+    let listOfSquares=[]
+    for (let i =1 ; i <= 20; i++) {
+        listOfNumbers.push(i)
+    }
+    listOfNumbers.forEach((element,index) => {
+        listOfSquares[index]=element*element
+    });
+    viewTwo.innerHTML=`The first 20 perfect squares are: ${listOfSquares}`
+}
+
+function callConcat(){
+    concatenates([1,2,3,4],[5,6,7])
+}
+
+function concatenates(array1,array2){
+    let arrayResult=array1.concat(array2)//One line solution
+    /*let arrayResult=array1 //For each solution
+    array2.forEach(element=>{ 
+        arrayResult.push(element)
+    })*/
+    viewTwo.innerHTML=arrayResult
 }
