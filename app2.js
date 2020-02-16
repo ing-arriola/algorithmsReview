@@ -7,6 +7,7 @@ const buttonPalindrome=document.getElementById('palindrome')
 const buttonDecideSum=document.getElementById('decide')
 const buttonSquares=document.getElementById('squares')
 const buttonConcatenates=document.getElementById('concatenates')
+const buttonCombinates=document.getElementById('combinates')
 const viewTwo=document.getElementById('app')
 
 buttonLargest.addEventListener("click",largest)
@@ -18,6 +19,7 @@ buttonPalindrome.addEventListener("click",palindrome)
 buttonDecideSum.addEventListener("click",decide)
 buttonSquares.addEventListener("click",squares)
 buttonConcatenates.addEventListener("click",callConcat)
+buttonCombinates.addEventListener("click",callComb)
 
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
@@ -142,6 +144,10 @@ function callConcat(){
     concatenates([1,2,3,4],[5,6,7])
 }
 
+function callComb(){
+    combinates([1,2,3],["a","b","c"])
+}
+
 function concatenates(array1,array2){
     let arrayResult=array1.concat(array2)//One line solution
     /*let arrayResult=array1 //For each solution
@@ -149,4 +155,18 @@ function concatenates(array1,array2){
         arrayResult.push(element)
     })*/
     viewTwo.innerHTML=arrayResult
+}
+
+function combinates(array1,array2){
+    if (array1.length === array2.length){
+        let combination=[]
+    for (let i = 0; i < array1.length; i++) {
+        combination.push(array1[i])
+        combination.push(array2[i])
+        }
+        viewTwo.innerHTML=combination
+    }else{
+
+    }
+    
 }
