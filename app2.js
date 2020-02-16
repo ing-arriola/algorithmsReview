@@ -145,7 +145,7 @@ function callConcat(){
 }
 
 function callComb(){
-    combinates([1,2,3],["a","b","c"])
+    combinates([1,2,3],["a","b","c","d","e","f"])
 }
 
 function concatenates(array1,array2){
@@ -158,15 +158,24 @@ function concatenates(array1,array2){
 }
 
 function combinates(array1,array2){
+    let combination=[]
     if (array1.length === array2.length){
-        let combination=[]
-    for (let i = 0; i < array1.length; i++) {
-        combination.push(array1[i])
-        combination.push(array2[i])
+        for (let i = 0; i < array1.length; i++) {
+            combination.push(array1[i])
+            combination.push(array2[i])
         }
-        viewTwo.innerHTML=combination
     }else{
-
+        let largestArray=(array1.length>array2.length) ? array1 : array2
+        let shorterArray=(array1.length<array2.length) ? array1 : array2
+        for (let i = 0; i < largestArray.length; i++) {
+            if(i>shorterArray.length){
+                combination.push(largestArray[i])
+            }else{
+                combination.push(largestArray[i])
+                combination.push(shorterArray[i])
+            }
+        }
     }
+    viewTwo.innerHTML=combination
     
 }
