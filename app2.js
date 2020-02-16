@@ -88,7 +88,7 @@ function decide(){
         case 2:
             break
         case 3:
-            viewTwo.innerHTML=runningTotalWithRecursion(0,0)
+            viewTwo.innerHTML=runningTotalWithRecursion(arrayToSum)
             break
     }
 }
@@ -108,12 +108,11 @@ function runningTotalWithFor(){
     
 }
 
-
-function runningTotalWithRecursion(total,i){
-    if(i===10){
-        return total
+function runningTotalWithRecursion(array){
+    if(array.length==1){
+        return array[0]
     }else{
-        total+=arrayToSum[i]
-        return runningTotalWithRecursion(total,i+1)
+        return array[0]+runningTotalWithRecursion(array.slice(1))
     }
+
 }
