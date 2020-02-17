@@ -249,6 +249,13 @@ function rotate(arr,times){
 }
 
 function fibonacci(){
+    n=getNumberFromUser("Ingrese cuanto digitos de la serie de fibonacci quiere")
+    let fib=[0,1]
+    let list=document.createElement("ul")
+    for (let i = 1; i < n; i++) {
+        fib.push(fib[i-1]+fib[i])
+    }
+    console.log(fib)
     
 }
 
