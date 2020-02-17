@@ -248,5 +248,5 @@ function rotate(arr,times){
 function numToArray(){
     let num=getNumberFromUser("Ingrese un numero")
     num=num.toString()
-    //viewTwo
+    viewTwo.innerHTML=`Number entered is: ${num} and as an array is: [${num.split("")}]`
 }
