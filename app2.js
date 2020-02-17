@@ -10,6 +10,7 @@ const buttonConcatenates=document.getElementById('concatenates')
 const buttonCombinates=document.getElementById('combinates')
 const buttonMergedSorted=document.getElementById('mergedSorted')
 const buttonRotate=document.getElementById('rotate')
+const buttonFibonacci=document.getElementById('fibonacci')
 const buttonNumToArray=document.getElementById('numToArray')
 
 const viewTwo=document.getElementById('app')
@@ -26,7 +27,9 @@ buttonConcatenates.addEventListener("click",callConcat)
 buttonCombinates.addEventListener("click",callComb)
 buttonMergedSorted.addEventListener("click",callMerge)
 buttonRotate.addEventListener("click",callRotate)
+buttonFibonacci.addEventListener("click",fibonacci)
 buttonNumToArray.addEventListener("click",numToArray)
+
 
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
@@ -243,6 +246,10 @@ function rotate(arr,times){
         arr.unshift(outElement)    
     }
     viewTwo.innerHTML=arr
+}
+
+function fibonacci(){
+    
 }
 
 function numToArray(){
