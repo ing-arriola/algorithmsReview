@@ -10,6 +10,7 @@ const buttonConcatenates=document.getElementById('concatenates')
 const buttonCombinates=document.getElementById('combinates')
 const buttonMergedSorted=document.getElementById('mergedSorted')
 const buttonRotate=document.getElementById('rotate')
+const buttonNumToArray=document.getElementById('numToArray')
 
 const viewTwo=document.getElementById('app')
 
@@ -25,6 +26,7 @@ buttonConcatenates.addEventListener("click",callConcat)
 buttonCombinates.addEventListener("click",callComb)
 buttonMergedSorted.addEventListener("click",callMerge)
 buttonRotate.addEventListener("click",callRotate)
+buttonNumToArray.addEventListener("click",numToArray)
 
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
@@ -50,7 +52,13 @@ function reverseArray(){
 
 function getNumberFromUser(msg){
     let number=prompt(msg)
-    return parseInt(number)
+     
+    try {
+        return parseInt(number)}
+    catch(e){
+        prompt("No ingreso un numero")
+        return 0
+    }
 }
 
 function checkElement(){
@@ -227,10 +235,11 @@ function rotate(arr,times){
     let outElement
     for (let i = 0; i < times; i++) {
         outElement=arr.pop()    
-        
-        arr.unshift(outElement)
-        
-        
+        arr.unshift(outElement)    
     }
     viewTwo.innerHTML=arr
+}
+
+function numToArray(){
+    let num=getNumberFromUser("Ingrese un numero")
 }
