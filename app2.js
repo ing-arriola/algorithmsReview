@@ -220,9 +220,17 @@ function mergedSorted(arr1,arr2){
 }
 
 function callRotate(){
-
+    rotate([1,2,3,4,5,6,7,8,9],getNumberFromUser("¿Cuantos digitos desea rotar?"))
 }
 
-function rotate(arr){
-    
+function rotate(arr,times){
+    let outElement
+    for (let i = 0; i < times; i++) {
+        outElement=arr.pop()    
+        
+        arr.unshift(outElement)
+        
+        
+    }
+    viewTwo.innerHTML=arr
 }
