@@ -12,6 +12,7 @@ const buttonMergedSorted=document.getElementById('mergedSorted')
 const buttonRotate=document.getElementById('rotate')
 const buttonFibonacci=document.getElementById('fibonacci')
 const buttonNumToArray=document.getElementById('numToArray')
+const buttonBinary=document.getElementById('binary')
 
 const viewTwo=document.getElementById('app')
 
@@ -29,7 +30,7 @@ buttonMergedSorted.addEventListener("click",callMerge)
 buttonRotate.addEventListener("click",callRotate)
 buttonFibonacci.addEventListener("click",fibonacci)
 buttonNumToArray.addEventListener("click",numToArray)
-
+buttonBinary.addEventListener("click",binary)
 
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
@@ -263,4 +264,8 @@ function numToArray(){
     let num=getNumberFromUser("Ingrese un numero")
     num=num.toString()
     viewTwo.innerHTML=`Number entered is: ${num} and as an array is: [${num.split("")}]`
+}
+
+function binary(){
+    
 }
