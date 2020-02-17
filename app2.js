@@ -52,13 +52,18 @@ function reverseArray(){
 
 function getNumberFromUser(msg){
     let number=prompt(msg)
-     
-    try {
-        return parseInt(number)}
-    catch(e){
-        prompt("No ingreso un numero")
+    try{
+        number=parseInt(number)
+        if (isNaN(number)){
+            throw "No ingreso un numero"
+        }else{
+            return number
+        } 
+    }catch(err){
+        alert(err)
         return 0
     }
+    
 }
 
 function checkElement(){
@@ -242,4 +247,6 @@ function rotate(arr,times){
 
 function numToArray(){
     let num=getNumberFromUser("Ingrese un numero")
+    num=num.toString()
+    //viewTwo
 }
