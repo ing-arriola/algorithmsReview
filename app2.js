@@ -12,7 +12,7 @@ const buttonMergedSorted=document.getElementById('mergedSorted')
 const buttonRotate=document.getElementById('rotate')
 const buttonFibonacci=document.getElementById('fibonacci')
 const buttonNumToArray=document.getElementById('numToArray')
-const buttonBinary=document.getElementById('binary')
+const buttonBinary=document.getElementById('bynary')
 
 const viewTwo=document.getElementById('app')
 
@@ -267,5 +267,25 @@ function numToArray(){
 }
 
 function binary(){
+    let search=getNumberFromUser("Ingrese numero para a buscar")
+    let start=0
+    let end=arrayToSum.length-1
+    let indexOfSearch=0
+    while (end >= start) {
+        let mid=Math.floor((start+end)/2)
+        console.log("ya valio, start es: "+start+"y end: "+end)
+        if(arrayToSum[mid]===search){
+            indexOfSearch= mid
+            break
+        }else{
+            if(arrayToSum[mid]<search){
+                start=mid+1
+            }else{
+                end=mid-1
+            }
+        }
+    }
     
+    viewTwo.innerHTML=indexOfSearch!=0?`El numero fue encontrado en el indice ${indexOfSearch}`:"El numero ingresado no pertenece al arreglo"
+
 }
