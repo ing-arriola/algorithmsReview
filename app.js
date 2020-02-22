@@ -1,22 +1,37 @@
-const buttonHello=document.getElementById('hello')
-const buttonCheck=document.getElementById('app2')
-const buttonSum=document.getElementById('sum')
-const buttonSum3and5=document.getElementById('sum3and5')
-const buttonSumOrMul=document.getElementById('sumOrMul')
-const buttonTables=document.getElementById('tables')
-const buttonGuess=document.getElementById('guess')
-const buttonLeap=document.getElementById('leap')
-
+const selectedAction=document.getElementById("basic")
+selectedAction.addEventListener("change",doAnAction)
 const view=document.getElementById('app')
 
-buttonHello.addEventListener("click",sayHello)
-buttonCheck.addEventListener("click",checkUser)
-buttonSum.addEventListener("click",sumUntilN)
-buttonSum3and5.addEventListener("click",sumUntilN3and5)
-buttonSumOrMul.addEventListener("click",sumOrMul)
-buttonTables.addEventListener("click",tables)
-buttonGuess.addEventListener("click",guessGame)
-buttonLeap.addEventListener("click",leapYears)
+function doAnAction(){    
+    switch (selectedAction.value) {
+        case "hello":
+            sayHello()
+            break;
+        case "check":
+            checkUser()
+            break
+        case "sum":
+            sumUntilN()
+            break
+        case "sum3and5":
+            sumUntilN3and5()
+            break
+        case "sumOrMul":
+            sumOrMul()
+            break
+        case "tables":
+            tables()
+            break
+        case "guess":
+            guessGame()
+            break
+        case "leap":
+            leapYears()
+            break
+        default:
+            break;
+    }
+}
 
 function sayHello(){
     let message="Hello World"
