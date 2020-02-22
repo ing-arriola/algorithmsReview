@@ -32,6 +32,24 @@ buttonFibonacci.addEventListener("click",fibonacci)
 buttonNumToArray.addEventListener("click",numToArray)
 buttonBinary.addEventListener("click",binary)
 
+const selectedActionStrLst=document.getElementById("strLst")
+
+selectedActionStrLst.addEventListener("change",doStrOrListAction)
+
+
+function doStrOrListAction(){
+    switch (selectedActionStrLst.value) {
+        case "largest":
+            largest()
+            break;
+        case "reverseArray":
+            reverseArray()
+            break
+        default:
+            break;
+    }
+
+}
 
 const arrayNumbers=[15,84,97,100,1,4,6,98,900,123,125,36,74,80,11]
 const arrayToSum=[1,2,3,4,5,6,7,8,9,10]
