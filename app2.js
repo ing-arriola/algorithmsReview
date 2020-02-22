@@ -1,41 +1,7 @@
-const buttonLargest=document.getElementById('largest')
-const buttonReverse=document.getElementById('reverseArray')
-const buttonCheckElement=document.getElementById('checkElement')
-const buttonOddPositions=document.getElementById('OddPositions') 
-const buttonRunningTotal=document.getElementById('runningTotal')
-const buttonPalindrome=document.getElementById('palindrome')
-const buttonDecideSum=document.getElementById('decide')
-const buttonSquares=document.getElementById('squares')
-const buttonConcatenates=document.getElementById('concatenates')
-const buttonCombinates=document.getElementById('combinates')
-const buttonMergedSorted=document.getElementById('mergedSorted')
-const buttonRotate=document.getElementById('rotate')
-const buttonFibonacci=document.getElementById('fibonacci')
-const buttonNumToArray=document.getElementById('numToArray')
-const buttonBinary=document.getElementById('bynary')
-
 const viewTwo=document.getElementById('app')
-
-buttonLargest.addEventListener("click",largest)
-buttonReverse.addEventListener("click",reverseArray)
-buttonCheckElement.addEventListener("click",checkElement)
-buttonOddPositions.addEventListener("click",OddPositions)
-buttonRunningTotal.addEventListener("click",runningTotal)
-buttonPalindrome.addEventListener("click",palindrome)
-buttonDecideSum.addEventListener("click",decide)
-buttonSquares.addEventListener("click",squares)
-buttonConcatenates.addEventListener("click",callConcat)
-buttonCombinates.addEventListener("click",callComb)
-buttonMergedSorted.addEventListener("click",callMerge)
-buttonRotate.addEventListener("click",callRotate)
-buttonFibonacci.addEventListener("click",fibonacci)
-buttonNumToArray.addEventListener("click",numToArray)
-buttonBinary.addEventListener("click",binary)
-
 const selectedActionStrLst=document.getElementById("strLst")
 
 selectedActionStrLst.addEventListener("change",doStrOrListAction)
-
 
 function doStrOrListAction(){
     switch (selectedActionStrLst.value) {
@@ -44,6 +10,45 @@ function doStrOrListAction(){
             break;
         case "reverseArray":
             reverseArray()
+            break
+        case "checkElement":
+            checkElement()
+            break
+        case "OddPositions":
+            OddPositions()
+            break
+        case "runningTotal":
+            runningTotal()
+            break
+        case "palindrome":
+            palindrome()
+            break
+        case "decide":
+            decide()
+            break
+        case "squares":
+            squares()
+            break
+        case "concatenates":
+            callConcat()
+            break
+        case "combinates":
+            callComb()
+            break
+        case "mergedSorted":
+            callMerge()
+            break
+        case "rotate":
+            callRotate()
+            break
+        case "fibonacci":
+            fibonacci()
+            break
+        case "numToArray":
+            numToArray()
+            break
+        case "binary":
+            binary()
             break
         default:
             break;
@@ -274,7 +279,8 @@ function fibonacci(){
     for (let i = 1; i < n; i++) {
         fib.push(fib[i-1]+fib[i])
     }
-    console.log(fib)
+    viewTwo.innerHTML=fib
+    
     
 }
 
@@ -291,7 +297,6 @@ function binary(){
     let indexOfSearch=0
     while (end >= start) {
         let mid=Math.floor((start+end)/2)
-        console.log("ya valio, start es: "+start+"y end: "+end)
         if(arrayToSum[mid]===search){
             indexOfSearch= mid
             break
